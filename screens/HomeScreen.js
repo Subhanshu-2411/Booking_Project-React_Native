@@ -175,8 +175,32 @@ const HomeScreen = () => {
                             placeholder="1 room • 2 adults • 0 children"
                         />
                     </Pressable>
-                    <Pressable>
-
+                    <Pressable
+                        style={
+                            {
+                                flexDirection: "row",
+                                alignItems: "center",
+                                gap: 10,
+                                paddingHorizontal: 10,
+                                borderColor: "#FFC72C",
+                                borderWidth: 2,
+                                paddingVertical: 15,
+                                backgroundColor: "blue"
+                            }
+                        }
+                    >
+                        <Text
+                            style={
+                                {
+                                    textAlign: "center",
+                                    fontSize: 15,
+                                    fontWeight: "500",
+                                    color: "white",
+                                }
+                            }
+                        >
+                            Search
+                        </Text>
                     </Pressable>
                 </View>
             </ScrollView>
