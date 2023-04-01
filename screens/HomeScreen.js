@@ -20,6 +20,8 @@ const HomeScreen = () => {
             headerStyle: {
                 backgroundColor: "blue",
                 height: 110,
+                borderBottomColor: "transparent",
+                shadowColor: "transparent"
             },
             headerRight: () => (
                 <Ionicons
