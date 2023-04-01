@@ -2,6 +2,7 @@ import React, {useLayoutEffect} from 'react';
 import { StyleSheet, Text, View } from "react-native";
 import {useNavigation} from "@react-navigation/native";
 import {Ionicons} from "@expo/vector-icons";
+import Header from "../components/Header";
 
 const HomeScreen = () => {
 
@@ -25,6 +26,11 @@ const HomeScreen = () => {
                     name="notifications-outline"
                     size={24}
                     color="white"
+                    style={
+                        {
+                            marginRight: 12,
+                        }
+                    }
                 />
             )
         })
@@ -32,7 +38,7 @@ const HomeScreen = () => {
 
     return (
         <View>
-            <Text>HomeScreen</Text>
+            <Header/>
         </View>
     );
 };
