@@ -28,10 +28,18 @@ const StackNavigator = () => {
                                 {focused}
                             ) => focused
                                 ? (
-                                    <Ionicons name="home" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="home"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                                 : (
-                                    <Ionicons name="home-outline" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="home-outline"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                         }
                     }
@@ -47,10 +55,18 @@ const StackNavigator = () => {
                                 {focused}
                             ) => focused
                                 ? (
-                                    <Ionicons name="heart" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="heart"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                                 : (
-                                    <Ionicons name="heart-outline" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="heart-outline"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                         }
                     }
@@ -66,10 +82,18 @@ const StackNavigator = () => {
                                 {focused}
                             ) => focused
                                 ? (
-                                    <Ionicons name="notifications" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="notifications"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                                 : (
-                                    <Ionicons name="notifications-outline" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="notifications-outline"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                         }
                     }
@@ -85,10 +109,18 @@ const StackNavigator = () => {
                                 {focused}
                             ) => focused
                                 ? (
-                                    <Ionicons name="person" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="person"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                                 : (
-                                    <Ionicons name="person-outline" size={24} color="blue"/>
+                                    <Ionicons
+                                        name="person-outline"
+                                        size={24}
+                                        color="blue"
+                                    />
                                 )
                         }
                     }
@@ -100,7 +132,15 @@ const StackNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Main" component={BottomTabs}/>"
+                <Stack.Screen
+                    name="Main"
+                    component={BottomTabs}
+                    options={
+                        {
+                            headerShown: false
+                        }
+                    }
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );
