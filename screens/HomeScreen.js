@@ -11,6 +11,12 @@ const HomeScreen = () => {
 
     const [selectedDates, setSelectedDates] = useState()
 
+    const [rooms, setRooms] = useState(1)
+
+    const [adults, setAdults] = useState(2)
+
+    const [children, setChildren] = useState(0)
+
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: true,
@@ -95,6 +101,7 @@ const HomeScreen = () => {
                             color="black"
                         />
                         <TextInput
+                            placeholderTextColor="black"
                             placeholder="Enter Your Destination"
                         />
                     </Pressable>
@@ -172,7 +179,8 @@ const HomeScreen = () => {
                             color="black"
                         />
                         <TextInput
-                            placeholder="1 room • 2 adults • 0 children"
+                            placeholderTextColor="red"
+                            placeholder="1 rooms • 2 adults • 0 children"
                         />
                     </Pressable>
                     <Pressable
