@@ -28,10 +28,10 @@ const StackNavigator = () => {
                                 {focused}
                             ) => focused
                                 ? (
-                                    <Entypo name="home" size={24} color="blue"/>
+                                    <Ionicons name="home" size={24} color="blue"/>
                                 )
                                 : (
-                                    <AntDesign name="home" size={24} color="blue"/>
+                                    <Ionicons name="home-outline" size={24} color="blue"/>
                                 )
                         }
                     }
@@ -47,10 +47,10 @@ const StackNavigator = () => {
                                 {focused}
                             ) => focused
                                 ? (
-                                    <AntDesign name="heart" size={24} color="blue"/>
+                                    <Ionicons name="heart" size={24} color="blue"/>
                                 )
                                 : (
-                                    <AntDesign name="hearto" size={24} color="blue"/>
+                                    <Ionicons name="heart-outline" size={24} color="blue"/>
                                 )
                         }
                     }
