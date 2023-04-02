@@ -4,6 +4,7 @@ import {useNavigation} from "@react-navigation/native";
 import {Ionicons, Feather} from "@expo/vector-icons";
 import Header from "../components/Header";
 import DatePicker from 'react-native-date-ranges';
+import {SlideAnimation, BottomModal, ModalButton, ModalContent, ModalFooter, ModalTitle} from "react-native-modals";
 
 const HomeScreen = () => {
 
@@ -16,6 +17,8 @@ const HomeScreen = () => {
     const [adults, setAdults] = useState(2)
 
     const [children, setChildren] = useState(0)
+
+    const [modalVisible, setModalVisible] = useState(false)
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -69,7 +72,8 @@ const HomeScreen = () => {
     }
 
     return (
-        <View>
+        <>
+            <View>
             <Header/>
             <ScrollView>
                 <View
@@ -213,6 +217,46 @@ const HomeScreen = () => {
                 </View>
             </ScrollView>
         </View>
+            <BottomModal
+                swipeThreshold={200}
+                onBachdropPress={
+                    () => setModalVisible(!modalVisible)
+                }
+                swipeDirection={['up', 'down']}
+                footer={
+                    <ModalFooter>
+                        <ModalButton
+                            text="Apply"
+                            style={
+                                {
+                                    marginBottom: 20,
+                                    color: "white",
+                                    backgroundColor: "blue"
+                                }
+                            }
+                            onPress={() => setModalVisible(!modalVisible)}
+                        />
+                    </ModalFooter>
+                }
+                modalTitle={
+                    <ModalTitle
+                        title="Select Rooms & Guests"
+                    />
+                }
+                modalAnimation={
+                    new SlideAnimation({
+                        slideFrom: "bottom"
+                    })
+                }
+                onHardwareBackPress={() => setModalVisible(!modalVisible)}
+                visible={modalVisible}
+                onTouchOutside={() => setModalVisible(!modalVisible)}
+            >
+                <ModalContent>
+
+                </ModalContent>
+            </BottomModal>
+        </>
     );
 };
 
