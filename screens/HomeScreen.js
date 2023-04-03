@@ -20,35 +20,39 @@ const HomeScreen = () => {
 
     const [modalVisible, setModalVisible] = useState(false)
 
-    useLayoutEffect(() => {
-        navigation.setOptions({
-            headerShown: true,
-            title: "Booking.com",
-            headerTitleStyle: {
-                fontSize: 20,
-                fontWeight: "bold",
-                color: "white"
-            },
-            headerStyle: {
-                backgroundColor: "blue",
-                height: 110,
-                borderBottomColor: "transparent",
-                shadowColor: "transparent"
-            },
-            headerRight: () => (
-                <Ionicons
-                    name="notifications-outline"
-                    size={24}
-                    color="white"
-                    style={
-                        {
-                            marginRight: 12,
-                        }
-                    }
-                />
+    useLayoutEffect(
+        () => {
+            navigation.setOptions(
+                {
+                    headerShown: true,
+                    title: "Booking.com",
+                    headerTitleStyle: {
+                        fontSize: 20,
+                        fontWeight: "bold",
+                        color: "white"
+                    },
+                    headerStyle: {
+                        backgroundColor: "blue",
+                        height: 110,
+                        borderBottomColor: "transparent",
+                        shadowColor: "transparent"
+                    },
+                    headerRight: () => (
+                        <Ionicons
+                            name="notifications-outline"
+                            size={24}
+                            color="white"
+                            style={
+                                {
+                                    marginRight: 12,
+                                }
+                            }
+                        />
+                    )
+                }
             )
-        })
-    })
+        }
+    )
 
     const customButton = (onConfirm) => {
         return (
@@ -165,6 +169,9 @@ const HomeScreen = () => {
                         />
                     </Pressable>
                     <Pressable
+                        onPress={
+                            () => setModalVisible(!modalVisible)
+                        }
                         style={
                             {
                                 flexDirection: "row",
@@ -244,16 +251,108 @@ const HomeScreen = () => {
                     />
                 }
                 modalAnimation={
-                    new SlideAnimation({
-                        slideFrom: "bottom"
-                    })
+                    new SlideAnimation(
+                        {
+                            slideFrom: "bottom"
+                        }
+                    )
                 }
-                onHardwareBackPress={() => setModalVisible(!modalVisible)}
+                onHardwareBackPress={
+                    () => setModalVisible(!modalVisible)
+                }
                 visible={modalVisible}
-                onTouchOutside={() => setModalVisible(!modalVisible)}
+                onTouchOutside={
+                    () => setModalVisible(!modalVisible)
+                }
             >
-                <ModalContent>
+                <ModalContent
+                    style={
+                        {
+                            width: "100%",
+                            height: 310,
+                        }
+                    }
+                >
+                    <View
+                        style={
+                            {
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "space-between",
+                                marginVertical: 15,
+                            }
+                        }
+                    >
+                        <Text>
+                            Rooms
+                        </Text>
+                        <Pressable
+                            style={
+                                {
+                                    flexDirection: "row",
+                                    alignItems: "center",
+                                    gap: 10,
+                                }
+                            }
+                        >
+                            <Pressable
+                                style={
+                                    {
+                                        width: 26,
+                                        height: 26,
+                                        borderRadius: 13,
+                                        borderColor: "#BEBEBE",
+                                        backgroundColor: "#E0E0E0"
+                                    }
+                                }
+                            >
+                                <Text
+                                    style={
+                                        {
+                                            textAlign: "center",
+                                            fontSize: 20,
+                                            fontWeight: "600",
+                                            paddingHorizontal: 6,
 
+                                        }
+                                    }
+                                >
+                                    -
+                                </Text>
+                            </Pressable>
+                            <Pressable>
+                                <Text>
+                                    {rooms}
+                                </Text>
+                            </Pressable>
+                            <Pressable
+                                style={
+                                    {
+                                        width: 26,
+                                        height: 26,
+                                        borderRadius: 13,
+                                        borderColor: "#BEBEBE",
+                                        backgroundColor: "#E0E0E0"
+                                    }
+                                }
+                            >
+                                <Text
+                                    style={
+                                        {
+                                            textAlign: "center",
+                                            fontSize: 20,
+                                            fontWeight: "600",
+                                            paddingHorizontal: 6,
+
+                                        }
+                                    }
+                                >
+                                    +
+                                </Text>
+                            </Pressable>
+                        </Pressable>
+
+                    </View>
                 </ModalContent>
             </BottomModal>
         </>
